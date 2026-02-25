@@ -13,7 +13,7 @@
       "require": { "types": "./dist/index.d.ts", "default": "./dist/index.cjs" }
     }
   },
-  "sideEffects": false,
+  "sideEffects": ["./dist/index.cjs", "./dist/index.mjs"],
   "files": [
     "dist/index.cjs",
     "dist/index.mjs",
