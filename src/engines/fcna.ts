@@ -13,7 +13,7 @@ import type { CalendarEngine, HijriDate } from '../types';
 // ─── Constants ───────────────────────────────────────────────────────────────
 
 const SYNODIC    = 29.530588861;  // Mean synodic month (days)
-const JDE0       = 2451550.09766; // Meeus k=0: mean new moon ~2000-01-06
+const JDE0       = 2451550.09766; // Meeus k=0 (2nd ed. Ch.49: 2451550.09765; 0.864 s diff, within tolerance)
 const JDE_UNIX   = 2440587.5;     // JDE of Unix epoch 1970-01-01 00:00 UTC
 const MS_PER_DAY = 86_400_000;
 const TO_RAD     = Math.PI / 180;

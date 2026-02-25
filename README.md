@@ -61,7 +61,7 @@ const result = toHijri(new Date(), { calendar: 'my-calendar' });
 | Function | Parameters | Returns | Notes |
 | --- | --- | --- | --- |
 | `toHijri(date, opts?)` | `Date`, `ConversionOptions?` | `HijriDate \| null` | Throws on invalid Date |
-| `toGregorian(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `Date \| null` | Throws on invalid Hijri |
+| `toGregorian(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `Date \| null` | Returns null on invalid input |
 | `isValidHijriDate(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `boolean` | |
 | `daysInHijriMonth(hy, hm, opts?)` | `number, number, ConversionOptions?` | `number` | |
 
@@ -122,9 +122,9 @@ Full API reference and architecture notes: [GitHub Wiki](https://github.com/acam
 ## Related
 
 - [luxon-hijri](https://github.com/acamarata/luxon-hijri) - Hijri formatting with Luxon
-- [dayjs-hijri-plus](https://github.com/gmbh/dayjs-hijri-plus) - Day.js Hijri plugin
-- [date-fns-hijri](https://github.com/edisdev/date-fns-hijri) - date-fns Hijri helpers
-- [moment-hijri-plus](https://github.com/moment/moment) - Moment.js Hijri plugin
+- [dayjs-hijri-plus](https://github.com/acamarata/dayjs-hijri-plus) - Day.js Hijri plugin
+- [date-fns-hijri](https://github.com/acamarata/date-fns-hijri) - date-fns Hijri helpers
+- [moment-hijri-plus](https://github.com/acamarata/moment-hijri-plus) - Moment.js Hijri plugin
 - [temporal-hijri](https://github.com/acamarata/temporal-hijri) - Temporal API Hijri support
 
 ## License

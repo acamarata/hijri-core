@@ -134,8 +134,8 @@ test('CJS registerCalendar: custom engine', () => {
 test('CJS toHijri throws on non-Date', () => {
   assert.throws(() => toHijri('bad'), /Invalid Gregorian date/);
 });
-test('CJS toGregorian throws on invalid Hijri', () => {
-  assert.throws(() => toGregorian(1317, 1, 1), /Invalid Hijri date/);
+test('CJS toGregorian returns null for out-of-range date', () => {
+  assert.strictEqual(toGregorian(1317, 1, 1), null);
 });
 
 // Summary

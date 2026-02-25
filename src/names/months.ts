@@ -28,7 +28,7 @@ export const hmMedium = [
   "Ramadan",
   "Shawwal",
   "Dhul-Qidah",
-  "Dhul-Hijah",
+  "Dhul-Hijjah",
 ];
 
 export const hmShort = [

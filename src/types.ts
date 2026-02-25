@@ -16,6 +16,7 @@ export interface HijriYearRecord {
 export interface CalendarEngine {
   readonly id: string;
   toHijri(date: Date): HijriDate | null;
+  /** Returns null for invalid or out-of-range input. Never throws. */
   toGregorian(hy: number, hm: number, hd: number): Date | null;
   isValid(hy: number, hm: number, hd: number): boolean;
   daysInMonth(hy: number, hm: number): number;

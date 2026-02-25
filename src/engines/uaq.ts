@@ -62,7 +62,7 @@ function uaqToHijri(date: Date): HijriDate | null {
 
 function uaqToGregorian(hy: number, hm: number, hd: number): Date | null {
   if (!uaqIsValid(hy, hm, hd)) {
-    throw new Error('Invalid Hijri date');
+    return null;
   }
 
   // Binary search on hy.
@@ -125,7 +125,9 @@ function uaqDaysInMonth(hy: number, hm: number): number {
     else                   hi = mid - 1;
   }
 
-  if (found === -1 || hDatesTable[found].dpm === 0) return 0;
+  if (found === -1 || hDatesTable[found].dpm === 0) {
+    throw new RangeError(`Hijri year ${hy} is outside the UAQ table range (1318-1500).`);
+  }
   return (hDatesTable[found].dpm >> (hm - 1)) & 1 ? 30 : 29;
 }
 

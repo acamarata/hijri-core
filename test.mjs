@@ -257,11 +257,8 @@ test('toHijri throws on invalid Date', () => {
     /Invalid Gregorian date/,
   );
 });
-test('UAQ toGregorian throws on invalid Hijri date', () => {
-  assert.throws(
-    () => toGregorian(1317, 1, 1),
-    /Invalid Hijri date/,
-  );
+test('UAQ toGregorian returns null for out-of-range date', () => {
+  assert.strictEqual(toGregorian(1317, 1, 1), null);
 });
 
 // ─── Summary ─────────────────────────────────────────────────────────────────

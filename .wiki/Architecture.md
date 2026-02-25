@@ -108,7 +108,7 @@ Minimal working example:
 ```typescript
 import { registerCalendar, type CalendarEngine } from 'hijri-core';
 
-// A fixed-offset arithmetic calendar (not accurate — for illustration only).
+// A fixed-offset arithmetic calendar (not accurate, for illustration only).
 function hijriFromMs(ms: number) {
   const HIJRI_EPOCH_MS = -42521974440000; // approx
   const MEAN_MONTH_MS  = 29.530588861 * 86_400_000;
