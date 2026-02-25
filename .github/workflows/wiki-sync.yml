@@ -1,4 +1,4 @@
-name: Wiki sync
+name: Wiki Sync
 
 on:
   push:
@@ -6,17 +6,20 @@ on:
     paths:
       - '.wiki/**'
 
+permissions:
+  contents: write
+
 jobs:
   sync:
-    name: Sync .wiki to GitHub Wiki
+    name: Sync wiki to GitHub Wiki
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Sync wiki pages
-        uses: nicenshtein/wiki-page-creator-action@v1
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+
+      - name: Sync .wiki/ to GitHub Wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
         with:
-          owner: acamarata
-          repo-name: hijri-core
-          md-folder: .wiki
+          path: .wiki/
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
