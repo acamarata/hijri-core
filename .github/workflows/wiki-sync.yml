@@ -1,0 +1,22 @@
+name: Wiki sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.wiki/**'
+
+jobs:
+  sync:
+    name: Sync .wiki to GitHub Wiki
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync wiki pages
+        uses: nicenshtein/wiki-page-creator-action@v1
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        with:
+          owner: acamarata
+          repo-name: hijri-core
+          md-folder: .wiki
