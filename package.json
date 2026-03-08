@@ -19,10 +19,7 @@
       }
     }
   },
-  "sideEffects": [
-    "./dist/index.cjs",
-    "./dist/index.mjs"
-  ],
+  "sideEffects": false,
   "files": [
     "dist/index.cjs",
     "dist/index.mjs",
