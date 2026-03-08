@@ -131,6 +131,10 @@ Full API reference and architecture notes: [GitHub Wiki](https://github.com/acam
 - [moment-hijri-plus](https://github.com/acamarata/moment-hijri-plus) - Moment.js Hijri plugin
 - [temporal-hijri](https://github.com/acamarata/temporal-hijri) - Temporal API Hijri support
 
+## Acknowledgments
+
+The Umm al-Qura calendar table is derived from data published by the King Abdulaziz City for Science and Technology (KACST), Saudi Arabia. The FCNA new moon algorithm follows Jean Meeus, "Astronomical Algorithms," 2nd ed., Chapter 49.
+
 ## License
 
 MIT. Copyright (c) 2024-2026 Aric Camarata.
