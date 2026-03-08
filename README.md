@@ -109,7 +109,7 @@ Register with `registerCalendar('my-id', myEngine)`. Then pass `{ calendar: 'my-
 
 ## Architecture
 
-The UAQ engine performs a binary search over the 184-entry table — O(log 183) per conversion. The FCNA engine computes new moon times using the Meeus Ch. 49 algorithm (3 to 5 trigonometric evaluations per call). The registry pattern lets any consumer add custom calendar systems at runtime without modifying the core.
+The UAQ engine performs a binary search over the 184-entry table: O(log 183) per conversion. The FCNA engine computes new moon times using the Meeus Ch. 49 algorithm (3 to 5 trigonometric evaluations per call). The registry pattern lets any consumer add custom calendar systems at runtime without modifying the core.
 
 For more detail see the [Architecture wiki page](https://github.com/acamarata/hijri-core/wiki/Architecture).
 
