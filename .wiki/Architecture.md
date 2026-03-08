@@ -39,6 +39,7 @@ The Umm al-Qura calendar is the official Islamic calendar of Saudi Arabia. Month
 ### Data format
 
 Each `HijriYearRecord` stores:
+
 - The Gregorian date of 1 Muharram for that Hijri year
 - A 12-bit `dpm` bitmask: bit `i` (0-indexed) = month length for month `i+1`. Bit 1 = 30 days, bit 0 = 29 days
 
@@ -70,9 +71,11 @@ The Fiqh Council of North America uses a global astronomical criterion rather th
 ### Criterion
 
 If the new moon conjunction occurs before 12:00 noon UTC on calendar day D:
+
 - The new Hijri month begins at midnight starting day D+1.
 
 If at or after 12:00 noon UTC:
+
 - The new Hijri month begins at midnight starting day D+2.
 
 This makes every Hijri month start deterministic from the astronomical conjunction time.
@@ -111,11 +114,11 @@ import { registerCalendar, type CalendarEngine } from 'hijri-core';
 // A fixed-offset arithmetic calendar (not accurate, for illustration only).
 function hijriFromMs(ms: number) {
   const HIJRI_EPOCH_MS = -42521974440000; // approx
-  const MEAN_MONTH_MS  = 29.530588861 * 86_400_000;
+  const MEAN_MONTH_MS = 29.530588861 * 86_400_000;
   const months = Math.floor((ms - HIJRI_EPOCH_MS) / MEAN_MONTH_MS);
-  const hy     = Math.floor(months / 12) + 1;
-  const hm     = (months % 12) + 1;
-  const hd     = Math.floor(((ms - HIJRI_EPOCH_MS) % MEAN_MONTH_MS) / 86_400_000) + 1;
+  const hy = Math.floor(months / 12) + 1;
+  const hm = (months % 12) + 1;
+  const hd = Math.floor(((ms - HIJRI_EPOCH_MS) % MEAN_MONTH_MS) / 86_400_000) + 1;
   return { hy, hm: hm <= 0 ? hm + 12 : hm, hd };
 }
 
@@ -124,7 +127,7 @@ const arithmeticEngine: CalendarEngine = {
   toHijri: (date) => hijriFromMs(date.getTime()),
   toGregorian: (hy, hm, hd) => null, // left as an exercise
   isValid: (hy, hm, hd) => hy > 0 && hm >= 1 && hm <= 12 && hd >= 1 && hd <= 30,
-  daysInMonth: (hy, hm) => (hm % 2 === 1 || hm === 12) ? 30 : 29,
+  daysInMonth: (hy, hm) => (hm % 2 === 1 || hm === 12 ? 30 : 29),
 };
 
 registerCalendar('arithmetic', arithmeticEngine);

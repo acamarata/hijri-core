@@ -29,11 +29,11 @@ const greg = toGregorian(1446, 9, 1);
 
 // FCNA/ISNA calendar
 const hijriFcna = toHijri(new Date('2025-03-01'), { calendar: 'fcna' });
-const gregFcna  = toGregorian(1446, 9, 1, { calendar: 'fcna' });
+const gregFcna = toGregorian(1446, 9, 1, { calendar: 'fcna' });
 
 // Validation and month length
-isValidHijriDate(1444, 9, 1);  // true
-daysInHijriMonth(1444, 9);     // 29
+isValidHijriDate(1444, 9, 1); // true
+daysInHijriMonth(1444, 9); // 29
 ```
 
 ### Custom Calendar
@@ -43,8 +43,12 @@ import { registerCalendar, toHijri, type CalendarEngine } from 'hijri-core';
 
 const myEngine: CalendarEngine = {
   id: 'my-calendar',
-  toHijri: (date) => { /* your logic */ return { hy: 1446, hm: 1, hd: 1 }; },
-  toGregorian: (hy, hm, hd) => { /* your logic */ return new Date(); },
+  toHijri: (date) => {
+    /* your logic */ return { hy: 1446, hm: 1, hd: 1 };
+  },
+  toGregorian: (hy, hm, hd) => {
+    /* your logic */ return new Date();
+  },
   isValid: (hy, hm, hd) => hy > 0 && hm >= 1 && hm <= 12 && hd >= 1,
   daysInMonth: (hy, hm) => 30,
 };
@@ -58,34 +62,34 @@ const result = toHijri(new Date(), { calendar: 'my-calendar' });
 
 ### Conversion functions
 
-| Function | Parameters | Returns | Notes |
-| --- | --- | --- | --- |
-| `toHijri(date, opts?)` | `Date`, `ConversionOptions?` | `HijriDate \| null` | Throws on invalid Date |
-| `toGregorian(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `Date \| null` | Returns null on invalid input |
-| `isValidHijriDate(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `boolean` | |
-| `daysInHijriMonth(hy, hm, opts?)` | `number, number, ConversionOptions?` | `number` | |
+| Function                              | Parameters                                   | Returns             | Notes                         |
+| ------------------------------------- | -------------------------------------------- | ------------------- | ----------------------------- |
+| `toHijri(date, opts?)`                | `Date`, `ConversionOptions?`                 | `HijriDate \| null` | Throws on invalid Date        |
+| `toGregorian(hy, hm, hd, opts?)`      | `number, number, number, ConversionOptions?` | `Date \| null`      | Returns null on invalid input |
+| `isValidHijriDate(hy, hm, hd, opts?)` | `number, number, number, ConversionOptions?` | `boolean`           |                               |
+| `daysInHijriMonth(hy, hm, opts?)`     | `number, number, ConversionOptions?`         | `number`            |                               |
 
 `ConversionOptions.calendar` defaults to `'uaq'`. Pass `'fcna'` or any registered calendar name.
 
 ### Registry functions
 
-| Function | Parameters | Returns |
-| --- | --- | --- |
-| `registerCalendar(name, engine)` | `string, CalendarEngine` | `void` |
-| `getCalendar(name)` | `string` | `CalendarEngine` |
-| `listCalendars()` | none | `string[]` |
+| Function                         | Parameters               | Returns          |
+| -------------------------------- | ------------------------ | ---------------- |
+| `registerCalendar(name, engine)` | `string, CalendarEngine` | `void`           |
+| `getCalendar(name)`              | `string`                 | `CalendarEngine` |
+| `listCalendars()`                | none                     | `string[]`       |
 
 ### Data exports
 
-| Export | Type | Description |
-| --- | --- | --- |
+| Export        | Type                | Description                                    |
+| ------------- | ------------------- | ---------------------------------------------- |
 | `hDatesTable` | `HijriYearRecord[]` | Full Umm al-Qura reference table (184 entries) |
-| `hmLong` | `string[]` | Long month names (e.g., "Ramadan") |
-| `hmMedium` | `string[]` | Medium month names (e.g., "Ramadan") |
-| `hmShort` | `string[]` | Short month names (e.g., "Ram") |
-| `hwLong` | `string[]` | Long weekday names |
-| `hwShort` | `string[]` | Short weekday names |
-| `hwNumeric` | `number[]` | Weekday numbers (1 = Sunday) |
+| `hmLong`      | `string[]`          | Long month names (e.g., "Ramadan")             |
+| `hmMedium`    | `string[]`          | Medium month names (e.g., "Ramadan")           |
+| `hmShort`     | `string[]`          | Short month names (e.g., "Ram")                |
+| `hwLong`      | `string[]`          | Long weekday names                             |
+| `hwShort`     | `string[]`          | Short weekday names                            |
+| `hwNumeric`   | `number[]`          | Weekday numbers (1 = Sunday)                   |
 
 ## Custom Calendars
 

@@ -18,7 +18,7 @@ const greg = toGregorian(1446, 9, 1);
 
 // FCNA
 const hijriFcna = toHijri(new Date('2025-03-01'), { calendar: 'fcna' });
-const gregFcna  = toGregorian(1446, 9, 1, { calendar: 'fcna' });
+const gregFcna = toGregorian(1446, 9, 1, { calendar: 'fcna' });
 ```
 
 ## Custom calendar registration

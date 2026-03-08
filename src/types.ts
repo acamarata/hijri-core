@@ -5,11 +5,11 @@ export interface HijriDate {
 }
 
 export interface HijriYearRecord {
-  hy:  number; // Hijri year
+  hy: number; // Hijri year
   dpm: number; // days-per-month bitmask (bit 0 = month 1: 1 -> 30 days, 0 -> 29 days)
-  gy:  number; // Gregorian year of 1 Muharram
-  gm:  number; // Gregorian month of 1 Muharram (1-based)
-  gd:  number; // Gregorian day of 1 Muharram
+  gy: number; // Gregorian year of 1 Muharram
+  gm: number; // Gregorian month of 1 Muharram (1-based)
+  gd: number; // Gregorian day of 1 Muharram
 }
 
 // Any calendar engine must implement this interface.

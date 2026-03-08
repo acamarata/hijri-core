@@ -7,12 +7,12 @@
 Converts a Gregorian `Date` to a Hijri date object.
 
 ```typescript
-function toHijri(date: Date, options?: ConversionOptions): HijriDate | null
+function toHijri(date: Date, options?: ConversionOptions): HijriDate | null;
 ```
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `date` | `Date` | Gregorian date to convert |
+| Parameter          | Type     | Description                        |
+| ------------------ | -------- | ---------------------------------- |
+| `date`             | `Date`   | Gregorian date to convert          |
 | `options.calendar` | `string` | Calendar name. Defaults to `'uaq'` |
 
 Returns `HijriDate` or `null` if the date falls outside the calendar's supported range.
@@ -26,19 +26,14 @@ UAQ uses local date components (`getFullYear`, `getMonth`, `getDate`) for timezo
 Converts a Hijri date to a Gregorian `Date`.
 
 ```typescript
-function toGregorian(
-  hy: number,
-  hm: number,
-  hd: number,
-  options?: ConversionOptions
-): Date | null
+function toGregorian(hy: number, hm: number, hd: number, options?: ConversionOptions): Date | null;
 ```
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `hy` | `number` | Hijri year |
-| `hm` | `number` | Hijri month (1-12) |
-| `hd` | `number` | Hijri day (1-30) |
+| Parameter          | Type     | Description                        |
+| ------------------ | -------- | ---------------------------------- |
+| `hy`               | `number` | Hijri year                         |
+| `hm`               | `number` | Hijri month (1-12)                 |
+| `hd`               | `number` | Hijri day (1-30)                   |
 | `options.calendar` | `string` | Calendar name. Defaults to `'uaq'` |
 
 Returns a UTC midnight `Date` or `null` if the input is out of range.
@@ -50,12 +45,7 @@ Throws `Error('Invalid Hijri date')` for UAQ when the date is not in the referen
 Returns `true` if the given Hijri date exists in the selected calendar.
 
 ```typescript
-function isValidHijriDate(
-  hy: number,
-  hm: number,
-  hd: number,
-  options?: ConversionOptions
-): boolean
+function isValidHijriDate(hy: number, hm: number, hd: number, options?: ConversionOptions): boolean;
 ```
 
 ### `daysInHijriMonth(hy, hm, options?)`
@@ -63,7 +53,7 @@ function isValidHijriDate(
 Returns the number of days in a given Hijri month.
 
 ```typescript
-function daysInHijriMonth(hy: number, hm: number, options?: ConversionOptions): number
+function daysInHijriMonth(hy: number, hm: number, options?: ConversionOptions): number;
 ```
 
 Returns 29 or 30. Returns 0 for UAQ when the year is out of range.
@@ -75,7 +65,7 @@ Returns 29 or 30. Returns 0 for UAQ when the year is out of range.
 Registers a calendar engine. Overwrites any existing engine with the same name.
 
 ```typescript
-function registerCalendar(name: string, engine: CalendarEngine): void
+function registerCalendar(name: string, engine: CalendarEngine): void;
 ```
 
 ### `getCalendar(name)`
@@ -83,7 +73,7 @@ function registerCalendar(name: string, engine: CalendarEngine): void
 Returns the registered engine for a given name. Throws if not found.
 
 ```typescript
-function getCalendar(name: string): CalendarEngine
+function getCalendar(name: string): CalendarEngine;
 ```
 
 Throws `Error('Unknown Hijri calendar: "name". Available: ...')`.
@@ -93,7 +83,7 @@ Throws `Error('Unknown Hijri calendar: "name". Available: ...')`.
 Returns the names of all registered calendars.
 
 ```typescript
-function listCalendars(): string[]
+function listCalendars(): string[];
 ```
 
 ## Types
@@ -114,11 +104,11 @@ One entry in the Umm al-Qura reference table.
 
 ```typescript
 interface HijriYearRecord {
-  hy:  number; // Hijri year
+  hy: number; // Hijri year
   dpm: number; // 12-bit days-per-month bitmask
-  gy:  number; // Gregorian year of 1 Muharram
-  gm:  number; // Gregorian month of 1 Muharram (1-based)
-  gd:  number; // Gregorian day of 1 Muharram
+  gy: number; // Gregorian year of 1 Muharram
+  gm: number; // Gregorian month of 1 Muharram (1-based)
+  gd: number; // Gregorian day of 1 Muharram
 }
 ```
 
@@ -146,15 +136,15 @@ interface ConversionOptions {
 
 ## Data exports
 
-| Export | Type | Description |
-| --- | --- | --- |
+| Export        | Type                | Description                                             |
+| ------------- | ------------------- | ------------------------------------------------------- |
 | `hDatesTable` | `HijriYearRecord[]` | Full UAQ table, 184 entries (1318-1500 H) plus sentinel |
-| `hmLong` | `string[]` | Long month names. Index 0 = Muharram |
-| `hmMedium` | `string[]` | Medium month names |
-| `hmShort` | `string[]` | Short month codes (3 chars) |
-| `hwLong` | `string[]` | Long weekday names. Index 0 = Sunday |
-| `hwShort` | `string[]` | Short weekday names |
-| `hwNumeric` | `number[]` | Weekday numbers, 1 = Sunday, 7 = Saturday |
+| `hmLong`      | `string[]`          | Long month names. Index 0 = Muharram                    |
+| `hmMedium`    | `string[]`          | Medium month names                                      |
+| `hmShort`     | `string[]`          | Short month codes (3 chars)                             |
+| `hwLong`      | `string[]`          | Long weekday names. Index 0 = Sunday                    |
+| `hwShort`     | `string[]`          | Short weekday names                                     |
+| `hwNumeric`   | `number[]`          | Weekday numbers, 1 = Sunday, 7 = Saturday               |
 
 ---
 
