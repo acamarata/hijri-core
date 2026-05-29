@@ -39,7 +39,8 @@
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
     "coverage": "c8 --reporter=lcov --reporter=text node --test",
-    "docs": "typedoc"
+    "docs": "typedoc",
+    "postbuild": "cp dist/index.d.ts dist/index.d.mts"
   },
   "keywords": [
     "hijri",
