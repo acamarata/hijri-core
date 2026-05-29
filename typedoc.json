@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "hijri-core",
+  "tsconfig": "tsconfig.json",
+  "readme": "none",
+  "skipErrorChecking": false,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": true
+}
