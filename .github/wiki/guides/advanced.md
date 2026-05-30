@@ -26,9 +26,10 @@ for (let d = 1; d <= days; d++) {
 import { registerCalendar, toHijri } from 'hijri-core';
 
 registerCalendar('my-calendar', {
+  id: 'my-calendar',
   toHijri(date) {
-    // Return { year, month, day, monthName, calendar: 'my-calendar' } or null
-    // date is a JS Date; use local components for timezone-safe lookup
+    // Return { hy, hm, hd } or null for out-of-range.
+    // Use local date components for timezone-safe lookup.
     const y = date.getFullYear();
     const m = date.getMonth() + 1;
     const d = date.getDate();
@@ -36,18 +37,18 @@ registerCalendar('my-calendar', {
     return null;
   },
   toGregorian(hy, hm, hd) {
-    // Return a Date (UTC midnight) or null for out-of-range
+    // Return a Date (UTC midnight) or null for out-of-range.
     return null;
   },
-  isValidHijriDate(hy, hm, hd) {
-    return false;
+  isValid(hy, hm, hd) {
+    return hy > 0 && hm >= 1 && hm <= 12 && hd >= 1 && hd <= 30;
   },
-  daysInHijriMonth(hy, hm) {
+  daysInMonth(hy, hm) {
     return 29;
   },
 });
 
-// Use it just like the built-in calendars
+// Use it just like the built-in calendars.
 const result = toHijri(new Date('2025-03-20'), { calendar: 'my-calendar' });
 ```
 
@@ -66,7 +67,7 @@ for (let hy = 1440; hy <= 1450; hy++) {
 
   if (!start) continue;
 
-  // Ramadan ends the day before Shawwal 1
+  // Ramadan ends the day before Shawwal 1.
   const last = new Date(end.getTime() - 86400_000);
 
   console.log(
@@ -119,7 +120,7 @@ for (const d of dates) {
   const uaq  = toHijri(d, { calendar: 'uaq'  });
   const fcna = toHijri(d, { calendar: 'fcna' });
 
-  const fmtH = (h) => h ? `${h.day}/${h.month}/${h.year}` : 'out of range';
+  const fmtH = (h) => h ? `${h.hd}/${h.hm}/${h.hy}` : 'out of range';
   console.log(`${d.toISOString().slice(0, 10)}  ${fmtH(uaq).padEnd(16)} ${fmtH(fcna)}`);
 }
 ```

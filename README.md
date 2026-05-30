@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/hijri-core.svg)](https://www.npmjs.com/package/hijri-core)
 [![CI](https://github.com/acamarata/hijri-core/actions/workflows/ci.yml/badge.svg)](https://github.com/acamarata/hijri-core/actions/workflows/ci.yml)
 [![license](https://img.shields.io/npm/l/hijri-core.svg)](LICENSE)
+[![wiki](https://img.shields.io/badge/docs-wiki-blue)](https://github.com/acamarata/hijri-core/wiki)
 
 Zero-dependency Hijri calendar engine for JavaScript and TypeScript. Supports the Umm al-Qura (UAQ) and FCNA/ISNA calendars out of the box. A pluggable registry lets you add custom calendar implementations at runtime.
 

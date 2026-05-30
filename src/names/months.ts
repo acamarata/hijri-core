@@ -1,6 +1,15 @@
 // Hijri month names in three forms.
 // Index 0 = Muharram (month 1), index 11 = Dhul Hijjah (month 12).
 
+/**
+ * Full English transliterations of the 12 Hijri month names.
+ *
+ * Index 0 corresponds to Muharram (month 1); index 11 to Dhul Hijjah (month 12).
+ * Suitable for display in contexts where the full name aids readability.
+ *
+ * @example
+ * const month = hmLong[hijriDate.hm - 1]; // "Ramadan"
+ */
 export const hmLong = [
   'Muharram', // 1
   'Safar', // 2
@@ -16,6 +25,15 @@ export const hmLong = [
   'Dhul Hijjah', // 12
 ];
 
+/**
+ * Medium-length transliterations of the 12 Hijri month names.
+ *
+ * Shorter than {@link hmLong} but more readable than {@link hmShort}.
+ * Useful for compact date labels where space is limited.
+ *
+ * @example
+ * const label = hmMedium[hijriDate.hm - 1]; // "Ramadan"
+ */
 export const hmMedium = [
   'Muharram',
   'Safar',
@@ -31,6 +49,15 @@ export const hmMedium = [
   'Dhul-Hijjah',
 ];
 
+/**
+ * Three-character short codes for the 12 Hijri months.
+ *
+ * Designed for narrow columns such as calendar grids or spreadsheet headers.
+ * Each code is exactly 3 ASCII characters.
+ *
+ * @example
+ * const abbr = hmShort[hijriDate.hm - 1]; // "Ram"
+ */
 export const hmShort = [
   'Muh',
   'Saf',

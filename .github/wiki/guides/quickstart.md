@@ -17,9 +17,9 @@ const d = new Date('2025-03-20');
 const h = toHijri(d);
 
 console.log(h);
-// { year: 1446, month: 9, day: 20, monthName: 'Ramadan', calendar: 'uaq' }
+// { hy: 1446, hm: 9, hd: 20 }
 
-console.log(`${h.day} ${h.monthName} ${h.year} AH`);
+console.log(`${h.hd} Ramadan ${h.hy} AH`);
 // 20 Ramadan 1446 AH
 ```
 
@@ -70,8 +70,8 @@ const d = new Date('2025-03-20');
 const uaq  = toHijri(d, { calendar: 'uaq'  });
 const fcna = toHijri(d, { calendar: 'fcna' });
 
-console.log(uaq.day,  uaq.month,  uaq.year);
-console.log(fcna.day, fcna.month, fcna.year);
+console.log(uaq.hd,  uaq.hm,  uaq.hy);
+console.log(fcna.hd, fcna.hm, fcna.hy);
 ```
 
 ## Out-of-range dates
