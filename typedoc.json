@@ -1,10 +1,9 @@
 {
   "entryPoints": ["src/index.ts"],
-  "out": "docs",
-  "name": "hijri-core",
-  "tsconfig": "tsconfig.json",
+  "out": ".github/wiki/api",
+  "plugin": ["typedoc-plugin-markdown"],
   "readme": "none",
-  "skipErrorChecking": false,
+  "skipErrorChecking": true,
   "excludePrivate": true,
   "excludeProtected": true,
   "includeVersion": true

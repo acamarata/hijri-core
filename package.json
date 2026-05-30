@@ -38,8 +38,8 @@
     "lint": "eslint .",
     "format": "prettier --write src/",
     "format:check": "prettier --check src/",
-    "coverage": "c8 --reporter=lcov --reporter=text node --test",
-    "docs": "typedoc",
+    "coverage": "c8 --reporter=lcov --reporter=text node test.mjs",
+    "docs": "typedoc --out .github/wiki/api src/index.ts",
     "postbuild": "cp dist/index.d.ts dist/index.d.mts"
   },
   "keywords": [
@@ -60,11 +60,13 @@
     "@acamarata/tsconfig": "^0.1.0",
     "@eslint/js": "^10.0.1",
     "@types/node": "^22.15.0",
+    "c8": "^10.1.0",
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
     "tsup": "^8.0.0",
     "typedoc": "^0.28.19",
+    "typedoc-plugin-markdown": "^4.11.0",
     "typescript": "^5.5.0",
     "typescript-eslint": "^8.56.1"
   },
