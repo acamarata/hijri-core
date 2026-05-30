@@ -162,7 +162,8 @@ function uaqAnchorMs(hy: number, hm: number): number {
     found = -1;
   while (lo <= hi) {
     const mid = (lo + hi) >>> 1;
-    const midHy = hDatesTable[mid].hy;
+    // mid is always within [0, hDatesTable.length-1] by binary search invariant
+    const midHy = hDatesTable[mid]!.hy;
     if (midHy === hy) {
       found = mid;
       break;
@@ -170,8 +171,9 @@ function uaqAnchorMs(hy: number, hm: number): number {
     else hi = mid - 1;
   }
 
-  if (found !== -1 && hDatesTable[found].dpm !== 0) {
-    const r = hDatesTable[found];
+  // found is within [0, hDatesTable.length-1]; guard confirms it's valid before use.
+  if (found !== -1 && hDatesTable[found]!.dpm !== 0) {
+    const r = hDatesTable[found]!;
     let days = 0;
     for (let i = 0; i < hm - 1; i++) {
       days += (r.dpm >> i) & 1 ? 30 : 29;

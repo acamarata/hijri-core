@@ -24,8 +24,10 @@ function findYearEntry(hy: number): HijriYearRecord | null {
 
   while (lo <= hi) {
     const mid = (lo + hi) >>> 1;
-    const midHy = hDatesTable[mid].hy;
-    if (midHy === hy) return hDatesTable[mid];
+    // mid is always within [0, hDatesTable.length-1] by binary search invariant
+    const row = hDatesTable[mid]!;
+    const midHy = row.hy;
+    if (midHy === hy) return row;
     else if (midHy < hy) lo = mid + 1;
     else hi = mid - 1;
   }
@@ -48,7 +50,8 @@ function uaqToHijri(date: Date): HijriDate | null {
 
   while (lo <= hi) {
     const mid = (lo + hi) >>> 1;
-    const entry = hDatesTable[mid];
+    // mid is always within [0, hDatesTable.length-1] by binary search invariant
+    const entry = hDatesTable[mid]!;
     const entryUtc = Date.UTC(entry.gy, entry.gm - 1, entry.gd);
 
     if (entryUtc <= inputUtc) {
@@ -60,9 +63,10 @@ function uaqToHijri(date: Date): HijriDate | null {
   }
 
   // dpm === 0 is the sentinel entry (hy 1501) marking the upper bound.
-  if (found === -1 || hDatesTable[found].dpm === 0) return null;
+  // found is within [0, hDatesTable.length-1]; guard above confirms it's valid.
+  if (found === -1 || hDatesTable[found]!.dpm === 0) return null;
 
-  const record = hDatesTable[found];
+  const record = hDatesTable[found]!;
   const startUtc = Date.UTC(record.gy, record.gm - 1, record.gd);
   let remaining = Math.round((inputUtc - startUtc) / MS_PER_DAY);
   let hijriMonth = 0;
