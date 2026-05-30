@@ -6,7 +6,7 @@
 
 # Interface: HijriDate
 
-Defined in: [types.ts:10](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L10)
+Defined in: [types.ts:10](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L10)
 
 A Hijri date triple.
 
@@ -25,7 +25,7 @@ const d: HijriDate = { hy: 1446, hm: 9, hd: 1 }; // 1 Ramadan 1446 AH
 
 > **hd**: `number`
 
-Defined in: [types.ts:13](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L13)
+Defined in: [types.ts:13](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L13)
 
 ***
 
@@ -33,7 +33,7 @@ Defined in: [types.ts:13](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **hm**: `number`
 
-Defined in: [types.ts:12](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L12)
+Defined in: [types.ts:12](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L12)
 
 ***
 
@@ -41,4 +41,4 @@ Defined in: [types.ts:12](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **hy**: `number`
 
-Defined in: [types.ts:11](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L11)
+Defined in: [types.ts:11](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L11)

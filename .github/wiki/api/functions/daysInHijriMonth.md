@@ -8,7 +8,7 @@
 
 > **daysInHijriMonth**(`hy`, `hm`, `options?`): `number`
 
-Defined in: [index.ts:96](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/index.ts#L96)
+Defined in: [index.ts:96](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/index.ts#L96)
 
 Return the number of days in a given Hijri month.
 

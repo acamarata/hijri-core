@@ -6,7 +6,7 @@
 
 # Interface: CalendarEngine
 
-Defined in: [types.ts:42](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L42)
+Defined in: [types.ts:42](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L42)
 
 Interface every calendar engine must implement.
 
@@ -21,7 +21,7 @@ the boundary gracefully without try/catch.
 
 > `readonly` **id**: `string`
 
-Defined in: [types.ts:43](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L43)
+Defined in: [types.ts:43](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L43)
 
 ## Methods
 
@@ -29,7 +29,7 @@ Defined in: [types.ts:43](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **daysInMonth**(`hy`, `hm`): `number`
 
-Defined in: [types.ts:48](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L48)
+Defined in: [types.ts:48](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L48)
 
 #### Parameters
 
@@ -51,7 +51,7 @@ Defined in: [types.ts:48](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **isValid**(`hy`, `hm`, `hd`): `boolean`
 
-Defined in: [types.ts:47](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L47)
+Defined in: [types.ts:47](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L47)
 
 #### Parameters
 
@@ -77,7 +77,7 @@ Defined in: [types.ts:47](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **toGregorian**(`hy`, `hm`, `hd`): `Date` \| `null`
 
-Defined in: [types.ts:46](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L46)
+Defined in: [types.ts:46](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L46)
 
 Returns null for invalid or out-of-range input. Never throws.
 
@@ -105,7 +105,7 @@ Returns null for invalid or out-of-range input. Never throws.
 
 > **toHijri**(`date`): [`HijriDate`](HijriDate.md) \| `null`
 
-Defined in: [types.ts:44](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L44)
+Defined in: [types.ts:44](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L44)
 
 #### Parameters
 

@@ -8,7 +8,7 @@
 
 > **toHijri**(`date`, `options?`): [`HijriDate`](../interfaces/HijriDate.md) \| `null`
 
-Defined in: [index.ts:42](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/index.ts#L42)
+Defined in: [index.ts:42](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/index.ts#L42)
 
 Convert a Gregorian date to a Hijri date.
 

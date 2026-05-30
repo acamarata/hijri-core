@@ -8,7 +8,7 @@
 
 > **registerCalendar**(`name`, `engine`): `void`
 
-Defined in: [registry.ts:14](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/registry.ts#L14)
+Defined in: [registry.ts:14](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/registry.ts#L14)
 
 Register a calendar engine under the given name.
 

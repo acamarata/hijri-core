@@ -6,7 +6,7 @@
 
 # Interface: ConversionOptions
 
-Defined in: [types.ts:57](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L57)
+Defined in: [types.ts:57](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L57)
 
 Options accepted by the convenience conversion functions.
 
@@ -19,4 +19,4 @@ Pass any name previously given to [registerCalendar](../functions/registerCalend
 
 > `optional` **calendar?**: `string`
 
-Defined in: [types.ts:58](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L58)
+Defined in: [types.ts:58](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L58)

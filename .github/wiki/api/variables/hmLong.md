@@ -8,7 +8,7 @@
 
 > `const` **hmLong**: `string`[]
 
-Defined in: [names/months.ts:13](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/names/months.ts#L13)
+Defined in: [names/months.ts:13](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/names/months.ts#L13)
 
 Full English transliterations of the 12 Hijri month names.
 

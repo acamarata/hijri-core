@@ -8,7 +8,7 @@
 
 > `const` **MONTHS\_PER\_YEAR**: `12` = `12`
 
-Defined in: [constants.ts:16](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/constants.ts#L16)
+Defined in: [constants.ts:16](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/constants.ts#L16)
 
 Number of months in a Hijri year.
 

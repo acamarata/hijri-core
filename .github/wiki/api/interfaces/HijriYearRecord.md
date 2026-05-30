@@ -6,7 +6,7 @@
 
 # Interface: HijriYearRecord
 
-Defined in: [types.ts:26](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L26)
+Defined in: [types.ts:26](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L26)
 
 One row in the Umm al-Qura reference table.
 
@@ -23,7 +23,7 @@ bit i (0-indexed from bit 0) = month i+1; 1 = 30 days, 0 = 29 days.
 
 > **dpm**: `number`
 
-Defined in: [types.ts:28](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L28)
+Defined in: [types.ts:28](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L28)
 
 ***
 
@@ -31,7 +31,7 @@ Defined in: [types.ts:28](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **gd**: `number`
 
-Defined in: [types.ts:31](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L31)
+Defined in: [types.ts:31](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L31)
 
 ***
 
@@ -39,7 +39,7 @@ Defined in: [types.ts:31](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **gm**: `number`
 
-Defined in: [types.ts:30](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L30)
+Defined in: [types.ts:30](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L30)
 
 ***
 
@@ -47,7 +47,7 @@ Defined in: [types.ts:30](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **gy**: `number`
 
-Defined in: [types.ts:29](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L29)
+Defined in: [types.ts:29](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L29)
 
 ***
 
@@ -55,4 +55,4 @@ Defined in: [types.ts:29](https://github.com/acamarata/hijri-core/blob/94bc28ebc
 
 > **hy**: `number`
 
-Defined in: [types.ts:27](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/types.ts#L27)
+Defined in: [types.ts:27](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/types.ts#L27)

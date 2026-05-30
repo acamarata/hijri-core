@@ -8,7 +8,7 @@
 
 > `const` **MS\_PER\_DAY**: `86400000` = `86_400_000`
 
-Defined in: [constants.ts:8](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/constants.ts#L8)
+Defined in: [constants.ts:8](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/constants.ts#L8)
 
 Milliseconds in one day (24 * 60 * 60 * 1000).
 

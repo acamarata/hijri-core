@@ -8,7 +8,7 @@
 
 > **isValidHijriDate**(`hy`, `hm`, `hd`, `options?`): `boolean`
 
-Defined in: [index.ts:78](https://github.com/acamarata/hijri-core/blob/94bc28ebc35ae2f3cb39db5be34561152a5b899d/src/index.ts#L78)
+Defined in: [index.ts:78](https://github.com/acamarata/hijri-core/blob/235ffb8851dac2e67cab33f1fc76cd8c00bbbe7c/src/index.ts#L78)
 
 Check whether a Hijri date is valid for the given calendar engine.
 
