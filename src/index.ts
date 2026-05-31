@@ -1,32 +1,32 @@
 // Built-in engines are registered at module load so that 'uaq' and 'fcna' are
 // available immediately on import. This module-level side effect is intentional
 // and documented in the sideEffects field of package.json.
-import { uaqEngine } from './engines/uaq';
-import { fcnaEngine } from './engines/fcna';
-import { registerCalendar } from './registry';
+import { uaqEngine } from "./engines/uaq";
+import { fcnaEngine } from "./engines/fcna";
+import { registerCalendar } from "./registry";
 
-registerCalendar('uaq', uaqEngine);
-registerCalendar('fcna', fcnaEngine);
+registerCalendar("uaq", uaqEngine);
+registerCalendar("fcna", fcnaEngine);
 
 // Registry
-export { registerCalendar, getCalendar, listCalendars } from './registry';
+export { registerCalendar, getCalendar, listCalendars } from "./registry";
 
 // Constants
-export { MS_PER_DAY, MONTHS_PER_YEAR } from './constants';
+export { MS_PER_DAY, MONTHS_PER_YEAR } from "./constants";
 
 // Types
-export type { HijriDate, HijriYearRecord, CalendarEngine, ConversionOptions } from './types';
+export type { HijriDate, HijriYearRecord, CalendarEngine, ConversionOptions } from "./types";
 
 // Data
-export { hDatesTable } from './data/hDates';
+export { hDatesTable } from "./data/hDates";
 
 // Names
-export { hmLong, hmMedium, hmShort } from './names/months';
-export { hwLong, hwShort, hwNumeric } from './names/weekdays';
+export { hmLong, hmMedium, hmShort } from "./names/months";
+export { hwLong, hwShort, hwNumeric } from "./names/weekdays";
 
 // Convenience wrappers
-import { getCalendar } from './registry';
-import type { HijriDate, ConversionOptions } from './types';
+import { getCalendar } from "./registry";
+import type { HijriDate, ConversionOptions } from "./types";
 
 /**
  * Convert a Gregorian date to a Hijri date.
@@ -41,9 +41,9 @@ import type { HijriDate, ConversionOptions } from './types';
  */
 export function toHijri(date: Date, options?: ConversionOptions): HijriDate | null {
   if (!(date instanceof Date) || isNaN(date.getTime())) {
-    throw new Error('Invalid Gregorian date');
+    throw new Error("Invalid Gregorian date");
   }
-  return getCalendar(options?.calendar ?? 'uaq').toHijri(date);
+  return getCalendar(options?.calendar ?? "uaq").toHijri(date);
 }
 
 /**
@@ -63,7 +63,7 @@ export function toGregorian(
   hd: number,
   options?: ConversionOptions,
 ): Date | null {
-  return getCalendar(options?.calendar ?? 'uaq').toGregorian(hy, hm, hd);
+  return getCalendar(options?.calendar ?? "uaq").toGregorian(hy, hm, hd);
 }
 
 /**
@@ -81,7 +81,7 @@ export function isValidHijriDate(
   hd: number,
   options?: ConversionOptions,
 ): boolean {
-  return getCalendar(options?.calendar ?? 'uaq').isValid(hy, hm, hd);
+  return getCalendar(options?.calendar ?? "uaq").isValid(hy, hm, hd);
 }
 
 /**
@@ -94,5 +94,5 @@ export function isValidHijriDate(
  * @throws {RangeError} if the month or year is out of range
  */
 export function daysInHijriMonth(hy: number, hm: number, options?: ConversionOptions): number {
-  return getCalendar(options?.calendar ?? 'uaq').daysInMonth(hy, hm);
+  return getCalendar(options?.calendar ?? "uaq").daysInMonth(hy, hm);
 }

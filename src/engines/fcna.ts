@@ -7,9 +7,9 @@
 // New moon times come from Jean Meeus, Astronomical Algorithms (2nd ed.),
 // Chapter 49, accurate to within a few minutes for 1000-3000 CE.
 
-import { hDatesTable } from '../data/hDates';
-import { MS_PER_DAY, MONTHS_PER_YEAR } from '../constants';
-import type { CalendarEngine, HijriDate } from '../types';
+import { hDatesTable } from "../data/hDates";
+import { MS_PER_DAY, MONTHS_PER_YEAR } from "../constants";
+import type { CalendarEngine, HijriDate } from "../types";
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -211,7 +211,7 @@ function fcnaDaysInMonth(hy: number, hm: number): number {
 
 function fcnaToHijri(gregorianDate: Date): HijriDate | null {
   if (!(gregorianDate instanceof Date) || isNaN(gregorianDate.getTime())) {
-    throw new Error('Invalid Gregorian date');
+    throw new Error("Invalid Gregorian date");
   }
 
   // FCNA criterion is UTC-based, so UTC date components ensure correct round-trips.
@@ -271,7 +271,7 @@ function fcnaIsValid(hy: number, hm: number, hd: number): boolean {
 // ─── Engine export ────────────────────────────────────────────────────────────
 
 export const fcnaEngine: CalendarEngine = {
-  id: 'fcna',
+  id: "fcna",
   toHijri: fcnaToHijri,
   toGregorian: fcnaToGregorian,
   isValid: fcnaIsValid,

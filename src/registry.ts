@@ -1,4 +1,4 @@
-import type { CalendarEngine } from './types';
+import type { CalendarEngine } from "./types";
 
 const _engines = new Map<string, CalendarEngine>();
 
@@ -25,7 +25,7 @@ export function registerCalendar(name: string, engine: CalendarEngine): void {
 export function getCalendar(name: string): CalendarEngine {
   const engine = _engines.get(name);
   if (!engine) {
-    const available = listCalendars().join(', ');
+    const available = listCalendars().join(", ");
     throw new Error(
       `Unknown Hijri calendar: "${name}". Available: ${available}. Register custom calendars with registerCalendar().`,
     );

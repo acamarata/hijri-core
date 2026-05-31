@@ -4,9 +4,9 @@
 // (Gregorian 1900-2076). Each entry records the Gregorian date of 1 Muharram and
 // a 12-bit days-per-month bitmask. Dates outside that window return null.
 
-import { hDatesTable } from '../data/hDates';
-import { MS_PER_DAY, MONTHS_PER_YEAR } from '../constants';
-import type { CalendarEngine, HijriDate, HijriYearRecord } from '../types';
+import { hDatesTable } from "../data/hDates";
+import { MS_PER_DAY, MONTHS_PER_YEAR } from "../constants";
+import type { CalendarEngine, HijriDate, HijriYearRecord } from "../types";
 
 /**
  * Binary search for a Hijri year entry in the UAQ table.
@@ -38,7 +38,7 @@ function findYearEntry(hy: number): HijriYearRecord | null {
 // the calendar-date lookup is timezone-safe regardless of the host environment.
 function uaqToHijri(date: Date): HijriDate | null {
   if (!(date instanceof Date) || isNaN(date.getTime())) {
-    throw new Error('Invalid Gregorian date');
+    throw new Error("Invalid Gregorian date");
   }
 
   const inputUtc = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
@@ -126,7 +126,7 @@ function uaqDaysInMonth(hy: number, hm: number): number {
 }
 
 export const uaqEngine: CalendarEngine = {
-  id: 'uaq',
+  id: "uaq",
   toHijri: uaqToHijri,
   toGregorian: uaqToGregorian,
   isValid: uaqIsValid,

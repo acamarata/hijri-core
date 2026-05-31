@@ -1,4 +1,4 @@
-import type { HijriYearRecord } from '../types';
+import type { HijriYearRecord } from "../types";
 
 // Umm al-Qura reference table: Hijri years 1318-1501.
 // Each entry records the 1 Muharram Gregorian date and a 12-bit days-per-month
