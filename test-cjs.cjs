@@ -61,7 +61,7 @@ describe('CJS UAQ conversions', () => {
     assert.equal(d.toISOString().slice(0, 10), '2025-03-01');
   });
   it('toHijri: 2023-03-23 = 1444/9/1', () => {
-    const h = toHijri(new Date(2023, 2, 23, 12));
+    const h = toHijri(new Date(Date.UTC(2023, 2, 23, 12)));
     assert.ok(h !== null);
     assert.equal(h.hy, 1444);
     assert.equal(h.hm, 9);

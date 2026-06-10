@@ -34,14 +34,17 @@ function findYearEntry(hy: number): HijriYearRecord | null {
   return null;
 }
 
-// toHijri uses local date components (getFullYear, getMonth, getDate) so that
-// the calendar-date lookup is timezone-safe regardless of the host environment.
+// toHijri interprets the input Date by its UTC calendar day (getUTC* components),
+// matching the FCNA engine and the UTC-midnight Dates returned by toGregorian.
+// This makes conversions host-timezone-independent and round-trips exact:
+//   toHijri(toGregorian(hy, hm, hd)) === { hy, hm, hd }  on any machine.
+// To convert a local wall-clock date, pass new Date(Date.UTC(y, m - 1, d)).
 function uaqToHijri(date: Date): HijriDate | null {
   if (!(date instanceof Date) || isNaN(date.getTime())) {
     throw new Error("Invalid Gregorian date");
   }
 
-  const inputUtc = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
+  const inputUtc = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
 
   // Binary search: find the last table entry whose Gregorian start date <= input.
   let lo = 0;

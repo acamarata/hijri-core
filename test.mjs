@@ -97,18 +97,27 @@ describe('UAQ toGregorian', () => {
 
 describe('UAQ toHijri', () => {
   it('2023-03-23 = 1444/9/1', () => {
-    const h = toHijri(new Date(2023, 2, 23, 12));
+    const h = toHijri(new Date(Date.UTC(2023, 2, 23, 12)));
     assert.ok(h !== null);
     assert.equal(h.hy, 1444);
     assert.equal(h.hm, 9);
     assert.equal(h.hd, 1);
   });
   it('2025-03-01 = 1446/9/1', () => {
-    const h = toHijri(new Date(2025, 2, 1, 12));
+    const h = toHijri(new Date(Date.UTC(2025, 2, 1, 12)));
     assert.ok(h !== null);
     assert.equal(h.hy, 1446);
     assert.equal(h.hm, 9);
     assert.equal(h.hd, 1);
+  });
+  it('UAQ round-trip: toHijri(toGregorian(1446, 9, 1)) = 1446/9/1', () => {
+    const greg = toGregorian(1446, 9, 1);
+    assert.ok(greg instanceof Date);
+    const hijri = toHijri(greg);
+    assert.ok(hijri !== null);
+    assert.equal(hijri.hy, 1446);
+    assert.equal(hijri.hm, 9);
+    assert.equal(hijri.hd, 1);
   });
 });
 

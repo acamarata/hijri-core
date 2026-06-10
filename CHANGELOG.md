@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- UAQ engine `toHijri` was reading local date components (`getFullYear/getMonth/getDate`) instead of UTC components, causing incorrect results on hosts west of UTC (e.g. `America/New_York`, `Pacific/Auckland`) when the input Date was a UTC-midnight value such as those returned by `toGregorian` or ISO date-only strings. `toHijri` now reads UTC calendar day components (`getUTCFullYear/getUTCMonth/getUTCDate`), matching the FCNA engine. **Behavior change:** on non-UTC hosts the converted Hijri day may shift to the UTC calendar day; round-trips via `toGregorian` are now exact on every machine.
+
 ## [1.0.2] - 2026-05-30
 
 ### Changed

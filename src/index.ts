@@ -34,6 +34,14 @@ import type { HijriDate, ConversionOptions } from "./types";
  * Uses the UAQ (Umm al-Qura) calendar by default. Pass `{ calendar: 'fcna' }`
  * or any registered calendar name via options to use a different engine.
  *
+ * **Time-zone contract:** the Date is interpreted by its UTC calendar day
+ * (`getUTCFullYear`, `getUTCMonth`, `getUTCDate`). `toGregorian` returns a
+ * UTC-midnight Date, so round-trips are exact and results are identical on
+ * every host regardless of its local time zone.
+ *
+ * To convert a local wall-clock date, pass `new Date(Date.UTC(y, m - 1, d))`.
+ * Note that `new Date("2025-03-01")` parses as UTC midnight, which is correct.
+ *
  * @param date - a valid JavaScript Date object
  * @param options - conversion options (calendar engine selection)
  * @returns the corresponding Hijri date, or null if the date is out of range

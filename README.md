@@ -35,6 +35,27 @@ isValidHijriDate(1444, 9, 1); // true
 daysInHijriMonth(1444, 9);    // 29
 ```
 
+## Day boundaries and time zones
+
+hijri-core maps civil calendar days one-to-one (tabular UAQ, computed FCNA). The religious Hijri day beginning at sunset is intentionally out of scope.
+
+`toHijri` reads the input Date's UTC calendar day (`getUTCFullYear`, `getUTCMonth`, `getUTCDate`). `toGregorian` returns a UTC-midnight Date. This means round-trips are exact and results are identical on every machine regardless of local time zone:
+
+```typescript
+// Safe on any host — UTC-explicit construction
+const greg = toGregorian(1446, 9, 1);          // 2025-03-01T00:00:00.000Z
+const back = toHijri(greg!);                   // { hy: 1446, hm: 9, hd: 1 } — always exact
+
+// ISO date-only strings parse as UTC midnight — correct
+toHijri(new Date('2025-03-01'));               // { hy: 1446, hm: 9, hd: 1 }
+
+// For a local wall-clock date, construct explicitly in UTC
+toHijri(new Date(Date.UTC(2025, 2, 1)));       // { hy: 1446, hm: 9, hd: 1 }
+
+// Avoid local Date constructor for date-only conversions — breaks on UTC+13
+// toHijri(new Date(2025, 2, 1))  ← do NOT do this
+```
+
 ## Custom Calendars
 
 Implement `CalendarEngine` and call `registerCalendar('my-id', engine)`. Pass `{ calendar: 'my-id' }` to any conversion function.
