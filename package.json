@@ -1,6 +1,6 @@
 {
   "name": "hijri-core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Zero-dependency Hijri calendar engine with pluggable calendar support. Includes Umm al-Qura (UAQ) and FCNA/ISNA calendars. Extensible registry for custom calendars.",
   "author": "Aric Camarata",
   "license": "MIT",
