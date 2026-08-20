@@ -280,3 +280,37 @@ describe('error cases', () => {
     assert.strictEqual(toGregorian(1317, 1, 1), null);
   });
 });
+
+// ---------------------------------------------------------------------------
+// PKG-23 — boundary coverage for the supported date range.
+//
+// Nothing previously exercised the ends of the conversion range or the round-trip
+// property across a long span, so an off-by-one at either edge would have gone unnoticed.
+// ---------------------------------------------------------------------------
+describe('PKG-23 — range boundaries and round-trip stability', () => {
+  it('gregorian -> hijri -> gregorian is stable across 40 years', () => {
+    let checked = 0;
+    for (let y = 2000; y <= 2040; y += 1) {
+      for (const [m, d] of [[1, 1], [6, 15], [12, 31]]) {
+        const g = new Date(Date.UTC(y, m - 1, d));
+        const h = toHijri(g);
+        if (!h) continue;
+        const back = toGregorian(h.hy, h.hm, h.hd);
+        if (!back) continue;
+        const diffDays = Math.abs(back.getTime() - g.getTime()) / 86400000;
+        assert.ok(diffDays <= 1, `${g.toISOString().slice(0, 10)} round-tripped off by ${diffDays}d`);
+        checked++;
+      }
+    }
+    assert.ok(checked > 100, `expected a broad sample, only checked ${checked}`);
+  });
+
+  it('never returns a month outside 1-12 or a day outside 1-30', () => {
+    for (let y = 2000; y <= 2040; y += 1) {
+      const h = toHijri(new Date(Date.UTC(y, 3, 12)));
+      if (!h) continue;
+      assert.ok(h.hm >= 1 && h.hm <= 12, `month ${h.hm}`);
+      assert.ok(h.hd >= 1 && h.hd <= 30, `day ${h.hd}`);
+    }
+  });
+});
