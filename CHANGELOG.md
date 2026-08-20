@@ -1,3 +1,9 @@
+## [1.1.0] - 2026-08-20
+
+### Added
+- Opt-in anonymous telemetry via `@acamarata/telemetry`, off by default (see TELEMETRY.md). This was merged after 1.0.4 was published, so 1.0.4 on npm does not contain it.
+- Round-trip stability coverage across 40 years (123 sampled dates, 2000-2040) and range assertions on returned month/day fields.
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
