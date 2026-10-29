@@ -8,6 +8,7 @@ updates:
     groups:
       all:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
     ignore:
       # tsup's dts build needs the TypeScript compiler API, which TypeScript 7 does not ship.
       - dependency-name: typescript
@@ -20,3 +21,4 @@ updates:
     groups:
       all:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
